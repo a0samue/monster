@@ -1,0 +1,9 @@
+---
+applications:
+- name: framework_svc
+  buildpacks: 
+  - hwc_buildpack
+  memory: 768M
+  stack: windows
+  instances: 1
+  random-route: true

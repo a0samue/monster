@@ -1,0 +1,8 @@
+---
+applications:
+- name: core-app
+  memory: 768M
+  buildpacks:
+  - dotnet_core_buildpack
+  instances: 1
+  random-route: true
