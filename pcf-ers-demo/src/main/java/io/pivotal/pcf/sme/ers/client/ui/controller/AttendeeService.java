@@ -153,8 +153,21 @@ public class AttendeeService {
 			    for (Object object : list) {
 					logger.debug("list: {}", object.getClass());
 			    	Map map = (Map)object;
-			    	//weird delimiter and UUID is to deal with multiple services of the same type
-				    servicesMap.put(entry.getKey() + "~~~" + UUID.randomUUID().toString(), map.get("name"));		    		
+
+					for (Object entkey : map.keySet()) {
+						System.out.println("key: " + entkey);
+						System.out.println("val: " + map.get(entkey));
+					}
+			
+					
+					// for user-provided services, we'll put some additional info in the map
+					if (entry.getKey().equalsIgnoreCase("user-provided")) {
+						servicesMap.put((String)map.get("name"), ((Map)map.get("credentials")).get("url"));
+					}
+					else {
+						//weird delimiter and UUID is to deal with multiple services of the same type
+						servicesMap.put(entry.getKey() + "~~~" + UUID.randomUUID().toString(), map.get("name"));
+					}
 				}
 			}
 			return servicesMap;

@@ -197,6 +197,11 @@ public class AttendeeController {
 	private void addAppEnv(HttpServletRequest request, Model model) throws Exception {
 
 		Map<String, Object> modelMap = attendeeService.addAppEnv(request);
+		System.out.println("addAppEnv, map contains: " + modelMap.size());
+		for (Map.Entry<String, Object> entry : modelMap.entrySet()) {
+			System.out.println("key: " + entry.getKey());
+			System.out.println("val: " + entry.getValue());
+		}
 		model.addAllAttributes(modelMap);
 	}
 
