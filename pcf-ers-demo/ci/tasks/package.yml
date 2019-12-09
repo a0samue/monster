@@ -11,4 +11,4 @@ inputs:
 outputs:
 - name: target
 run:
-  path: source-code/ci/tasks/package.sh
+  path: source-code/pcf-ers-demo/ci/tasks/package.sh
