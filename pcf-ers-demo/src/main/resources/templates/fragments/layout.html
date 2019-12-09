@@ -154,9 +154,15 @@ References:
 						<h4>Services</h4>
 						<span th:if="${applicationServices.isEmpty()}">None</span>
 						<p th:each="instance : ${applicationServices}">
-							<b><span
+							<b>
+<!--								<span
 								th:text="${#strings.substringBefore(instance.key,'~~~')}"></span></b>:&nbsp;<span
 								th:text="${instance.value}"></span><br />
+-->
+								<span
+								th:text="${instance.key}"></span></b>:&nbsp;<a th:href="@{${instance.value}}"><span
+								th:text="${instance.value}"></span></a><br />
+
 						</p>
 
 						<div id="resultsBlock-health"></div>
