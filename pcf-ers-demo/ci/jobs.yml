@@ -5,8 +5,8 @@ jobs:
     trigger: true
   - task: package
     privileged: true
-    file: source-code/ci/tasks/package.yml
+    file: source-code/pcf-ers-demo/ci/tasks/package.yml
   - put: resource-deploy-web-app
     params:
-      manifest: source-code/manifest.yml
+      manifest: source-code/pcf-ers-demo/manifest.yml
       path: target/pcf-ers-demo1-0.0.1-SNAPSHOT.jar
