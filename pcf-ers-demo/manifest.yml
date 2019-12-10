@@ -1,6 +1,6 @@
 ---
 applications:
-- name: attendees2
+- name: java-app
   memory: 768M
   instances: 1
   random-route: true
